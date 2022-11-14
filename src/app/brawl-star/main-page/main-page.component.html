@@ -2,16 +2,26 @@
 <hr>
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
+        <!-- <h3>Personajes</h3>
         <hr>
         <ul>
 
             <li *ngFor="let item of personajes;" 
             [ngClass]="{red: item.health <1000,
-                        yellow: item.health>1000 && item.health<3000,
-                        green: item.health>3000}"
+                        yellow: item.health>1000 && item.health<=3000,
+                        green: item.health>=3000}"
                 
             >{{item.pj}} - {{item.health}}</li>
-        </ul>
+        </ul> -->
+        <app-character [personajes]="personajes" ></app-character>
+    </div>
+    <div class="col">
+        <!-- <h3>Add character</h3>
+        <form (ngSubmit)="addCharacter()">
+            <input type="text" name="name" id="name" [(ngModel)]="nuevo.pj">
+            <input type="number" name="health" id="health" [(ngModel)]="nuevo.health">
+            <button type="submit">Add</button>
+        </form> -->
+        <app-add-character [nuevo]="nuevo" [personajes] = "personajes"></app-add-character>
     </div>
 </div>

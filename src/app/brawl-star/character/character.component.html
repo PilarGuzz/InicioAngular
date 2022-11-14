@@ -1,0 +1,11 @@
+<h3>Personajes</h3>
+<hr>
+<ul>
+
+    <li *ngFor="let item of personajes;" 
+    [ngClass]="{red: item.health <1000,
+                yellow: item.health>1000 && item.health<=3000,
+                green: item.health>=3000}"
+        
+    >{{item.pj}} - {{item.health}}</li>
+</ul>
