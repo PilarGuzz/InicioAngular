@@ -13,7 +13,7 @@
                 
             >{{item.pj}} - {{item.health}}</li>
         </ul> -->
-        <app-character [personajes]="personajes" ></app-character>
+        <app-character></app-character>
     </div>
     <div class="col">
         <!-- <h3>Add character</h3>
@@ -22,6 +22,6 @@
             <input type="number" name="health" id="health" [(ngModel)]="nuevo.health">
             <button type="submit">Add</button>
         </form> -->
-        <app-add-character [nuevo]="nuevo" [personajes] = "personajes"></app-add-character>
+        <app-add-character [nuevo]="nuevo"></app-add-character>
     </div>
 </div>

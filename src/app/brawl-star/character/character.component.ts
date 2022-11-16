@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Character } from './interfaces/character';
+import { BSService } from '../services/brawl-star-service';
 
 @Component({
   selector: 'app-character',
@@ -7,10 +8,15 @@ import { Character } from './interfaces/character';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent {
+  constructor(private bsService:BSService) {
+   }
 
-  constructor() { }
+   get personajes():Character[]{
+     return this.bsService.personajes;
+   }
 
-  @Input() personajes: Character[] = [];
-
+   deleteCharacter(pj: Character){
+     this.bsService.deleteCharacter(pj);
+   }
 
 }

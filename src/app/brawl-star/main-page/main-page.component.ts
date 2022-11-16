@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Character } from '../character/interfaces/character';
+import { BSService } from '../services/brawl-star-service';
 
 @Component({
   selector: 'app-main-page',
@@ -6,20 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-
-  constructor() { }
+  personajes : Character[];
+  constructor(bsService:BSService) { 
+    console.log('Constructor main page')
+    this.personajes = bsService.personajes;
+    
+  }
 
   nuevo = {
     pj:'',
     health: 0
   };
 
-  personajes = [
-    {pj: 'Shelly', health: 3600},
-    {pj: 'Nita', health: 3800},
-    {pj: 'Colt', health: 2800},
-    {pj: 'Jessie', health: 900}
 
-  ]
+  addCharacter(character: Character){
+    
+    this.personajes.push({...character});
+  }
 
 }

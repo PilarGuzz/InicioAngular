@@ -7,5 +7,5 @@
                 yellow: item.health>1000 && item.health<=3000,
                 green: item.health>=3000}"
         
-    >{{item.pj}} - {{item.health}}</li>
+    >{{item.pj}} - {{item.health}} <button (click)="deleteCharacter(item)">Borrar</button></li>
 </ul>
